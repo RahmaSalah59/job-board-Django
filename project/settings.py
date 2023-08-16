@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'home.apps.HomeConfig',
     'job.apps.JobConfig',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'Frontend-Template')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -131,6 +132,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
 

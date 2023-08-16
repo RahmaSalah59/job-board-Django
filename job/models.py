@@ -1,9 +1,9 @@
 from django.db import models
-
+from django.utils.text import slugify
 # Create your models here.
 JOB_TYPE = (
-    ('FULL_TIME','FULL_TIME'),
-    ('PART_TIME','PART_TIME'),
+    ('Full_Time','Full_Time'),
+    ('Part_Time','Part_Time'),
 )
 
 GENDER  = (
@@ -11,6 +11,17 @@ GENDER  = (
     ('FEMALE','FEMALE'),
 )
 
+def image_save(instance,filename):
+    image_name,extinsion = filename.split('.')
+    return "jobs/%s.%s"%(instance.id,extinsion)
+
+
+class category(models.Model):
+    name = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.name
+    
 class job(models.Model):
     title = models.CharField(max_length=100)
     # locatoin ...  
@@ -19,9 +30,30 @@ class job(models.Model):
     puplished_at = models.DateTimeField(auto_now=True)
     vacancy = models.IntegerField(default=1)
     salary = models.IntegerField(default=0)
-    #category ... 
+    category_name = models.ForeignKey(category,on_delete=models.CASCADE) 
     experience = models.IntegerField(default=1)
     gender = models.CharField(max_length=100,choices=GENDER) 
+    image = models.ImageField(upload_to=image_save)
+    slug = models.SlugField(blank=True,null=True)
+
+
+    def save(self,*args,**kwargs):
+        self.slug = slugify(self.title)  
+        super(job,self).save(*args,**kwargs)
 
     def __str__(self):
         return self.title
+
+
+class Apply(models.Model):
+    apply_job = models.ForeignKey(job,on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=50)
+    website = models.URLField()
+    cv = models.FileField(upload_to="apply/")
+    coverletter = models.TextField(max_length=1000)
+    apply_at = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return self.name
