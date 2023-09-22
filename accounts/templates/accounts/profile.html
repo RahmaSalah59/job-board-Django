@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+
+{% block content %}
+   
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Welcom {{profile.user}} ^^</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="job_details_header">
+                                
+                                    <div class="job_sumary ">
+                                        <div class="summery_header ">
+                                            <h2 class="text-center">{{profile.user.first_name}} {{profile.user.last_name}}</h2>
+                                        </div>
+                                        <div class="job_content">
+                                           
+                                            <ul>
+                                            
+                                               <li><img src="{{profile.image.url}}" height="200px" width="200px" ></li>
+                                                <li>Name: <span><strong>{{profile.user}}</strong></span></li>
+                                                <li>Email: <span><strong>{{profile.user.email}}</strong></span></li>
+                                                <li>City: <span><strong>{{profile.city}}</strong></span></li>
+                                                <li>Phone Number: <span><strong>{{profile.phone_number}}</strong></span></li>
+                                            </ul>
+                                        </div>
+                                          <div>
+                                             <a href="{% url 'accounts:profile_edit' %}" class="boxed-btn3 w-100">Edit Profile</a>
+                                         </div>
+                                  
+                                   
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                
+                    
+                </div>
+             
+            </div>
+        </div>
+    </div>
+
+   {% endblock %}
+
+
+

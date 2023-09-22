@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+from django.contrib.auth.models import User
+
 # Create your models here.
 JOB_TYPE = (
     ('Full_Time','Full_Time'),
@@ -23,6 +25,7 @@ class category(models.Model):
         return self.name
     
 class job(models.Model):
+    owner = models.ForeignKey(User,on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     # locatoin ...  
     type = models.CharField(max_length=100,choices=JOB_TYPE)
@@ -30,7 +33,7 @@ class job(models.Model):
     puplished_at = models.DateTimeField(auto_now=True)
     vacancy = models.IntegerField(default=1)
     salary = models.IntegerField(default=0)
-    category_name = models.ForeignKey(category,on_delete=models.CASCADE) 
+    category_name = models.ForeignKey(category,on_delete=models.CASCADE,null=True,blank=True) 
     experience = models.IntegerField(default=1)
     gender = models.CharField(max_length=100,choices=GENDER) 
     image = models.ImageField(upload_to=image_save)
