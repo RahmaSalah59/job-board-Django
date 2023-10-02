@@ -25,3 +25,5 @@ class city(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+# cv clooage skills educations country search

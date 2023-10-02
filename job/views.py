@@ -5,13 +5,15 @@ from django.core.paginator import Paginator
 from .form import ApplyForm ,AddJob
 from django.contrib.auth.decorators import login_required 
 from .filters import JobFilter
-
+from django.core.mail import send_mail
+from django.contrib import messages
+from django.conf import settings
 
 
 
 # Create your views here.
 def all_jobs(request):
-    all_jobs = job.objects.all()
+    all_jobs = job.objects.all().order_by('puplished_at')
     filter = JobFilter(request.GET,queryset=all_jobs)
     all_jobs = filter.qs
     num = job.objects.all()
@@ -50,4 +52,6 @@ def add_job(request):
         form=AddJob()
     
     return render(request,"job/add_job.html",{'form':form})
+
+
 
