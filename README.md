@@ -1,5 +1,7 @@
-#Job Board Project
+<h1>Job Board Project</h1>
+
 Overview
+
 The Job Board Project is a web application designed to facilitate job listings and job applications. It provides a platform where employers can post job openings and job seekers can search and apply for jobs.
 
 Features
