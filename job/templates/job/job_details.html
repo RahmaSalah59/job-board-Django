@@ -38,6 +38,7 @@
                                         </div>
                                         <div class="location">
                                             <p> <i class="fa fa-clock-o"></i>{{job.puplished_at}}</p>
+                                            <p><i class="fa fa-book"></i>Published By/<a href="{% url 'accounts:job_posted_by' job.pk %}"> {{job.profile_name.user.first_name}}  {{job.profile_name.user.last_name}}</a> </p>
                                         </div>
                                     </div>
                                 </div>

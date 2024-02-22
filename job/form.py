@@ -5,12 +5,12 @@ class  ApplyForm(forms.ModelForm):
 
     class Meta:
         model = Apply
-        fields = ['name','email','website','cv','coverletter']
+        fields = ['name','email','portfolio','cv','coverletter']
         
 
 class AddJob(forms.ModelForm):
     class Meta:
         model = job
         fields = "__all__"
-        exclude = ("owner","slug")
+        exclude = ("owner","slug","profile_name")
     

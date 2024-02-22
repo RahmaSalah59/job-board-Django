@@ -1,0 +1,253 @@
+/* role 1
+for items like p ,....
+selector {
+    property:value;
+    ...
+}
+
+for classes
+.classNmae{
+    ...
+}
+
+for id 
+#idName{
+    ...
+} */
+
+
+/* p{
+    color: blueviolet;
+    font-size: 40px;
+} */
+
+/* 
+where to put css files in html
+1- external link 
+<link rel="stylesheet" href="first.css">
+
+2-internal tags 
+<style><\style>
+
+3- inline 
+<p color=red>
+ */
+
+ /* التكليف الاول done */
+
+ /* colors methods
+ div {
+    background-color: red;  Color Name 
+    background-color: rgb(0 0 0 / 50%);  Red, Green, Blue, Alpha Channel-الشفافيه الخاصة باللون 
+    background-color: #FF0000;  Color Hex Code 
+
+    background-image: url("../imgs/learn-programming.png");
+
+    background-repeat: no-repeat;  مش هيكرر الصورة في اي مكان
+    background-repeat: repeat-x; هيكرر الصورة بشكل افقي
+    background-repeat: repeat-y; هيكرر الصورة بشكل رأسي
+    background-repeat: repeat; هيكررها في كل الاتجاهات
+    
+
+    background-attachment: scroll; لو البيدج كبيرة الصورة مش بتتحرك معايا وانا بعمل scroll dowen
+    background-attachment: fixed; الصورة بتفضل ثابته وظاهرة معايا وانا بعمل scroll dowen
+
+    background-position: left-right-center top-right-center; معناها  فوق شمال او يمين في النص وهكذا 
+    background-position: 50px 20px;
+    background-position: 50%  70%;
+
+    background-size: auto; الصورة هتظهر بحجمها الحقيقي
+    background-size: cover; بتملي المحتوي وممكن يتعملها ستريتش عادي بس بتتقطع منها اجزاء
+    background-size: contain; بتملي المحتوي وممكن يتعملها ستريتش عادي وبتظهر كاامله بدون قطع   
+
+   
+    padding -> الحدود الداخليه للعنصر ,لا تقبل السالب 
+    Top Right Bottom Left
+    10px 10px 10px 10px
+    padding: 10px;
+      
+    Top Right Bottom Left
+    10px 20px 10px 20px
+    padding: 10px 20px;
+      
+    Top Right Bottom Left
+    10px 20px 15px 20px
+    padding: 10px 20px 15px;
+      
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    margins -> الحدود الخارجيه للعنصر ,تقبل السالب 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: 100% or 20px;
+
+}  */
+
+  
+/* from 5 -> 8 */
+/* assignment 1 */
+
+/* 
+div {
+    width: 500px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    background-color: #8a2be2;
+    background-color:rgb(138, 43, 226) ;
+    background-color: #8a2be2;
+}
+
+.assign-1-shape-2{
+    background-color: rgb(138  43 226 / 50%);
+}
+.assign-1-shape-3{
+    background-color: rgb(138 43 226 / 10%);
+} */
+
+/* assignment 2 */
+
+/* div{
+    height: 400px;
+    width: 400px;
+    margin-bottom: 10px;
+    background-image: url(css-assignment-5-8.png);
+}
+
+.assign-2-shape-1{
+    background-repeat: no-repeat;
+}
+.assign-2-shape-2{
+    background-repeat: repeat-y;
+}
+.assign-2-shape-3{
+    background-repeat: repeat-x;
+}
+.assign-2-shape-4{
+    background-repeat: repeat;
+} */
+
+/* assignment 3 */
+
+/* div {
+    height: 400px;
+    width:400px;
+    background-image: url(css-assignment-5-8.png);
+}
+.assign-3-shape-1{
+    background-repeat: no-repeat;
+}
+.assign-3-shape-2{
+    background-repeat: repeat-y;
+    background-position: right;
+}
+.assign-3-shape-3{
+    background-repeat: repeat-x;
+    background-position: bottom;
+}
+.assign-3-shape-4{
+    background-repeat: repeat;
+} */
+
+/* assignment 4 */
+/* div{
+    height: 400px;
+    width: 400px;
+    background-image: url(css-assignment-5-8.png);
+    background-color: rgb(205, 212, 212);
+}
+.assign-4-shape-1{
+    background-size: 80%;
+    background-repeat: no-repeat;
+
+}
+.assign-4-shape-2{
+    background-size: 80%;
+    background-position: right;
+    background-repeat: repeat-y;
+}
+.assign-4-shape-3{
+    background-size: 80%;
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+.assign-4-shape-4{
+    background-position: left bottom;
+    background-repeat: no-repeat;
+} */
+/* 
+borders -> مابين ال padding وبين ال margin
+بيتحدد ب 3 حاجات
+border-size: 20px;  -> الحجم بتاعة (السمك بتاعه)
+border-color: red; اللون
+border-style: solid; النوع بتاعه
+
+border: 10px solid red; -> ممكن في جمله واحده */
+/* 
+div {
+    padding: 20px;
+    margin: 10px;
+    border: 20px solid red
+} */
+
+/* outline -> حواف برا العنصر بتحدده من برا  */
+
+/*
+
+display 
+
+  Block
+
+  - Take Full Width If No Width
+  - Add Line Break
+  - Respect Padding, Margin, Width, Height
+
+  Inline
+
+  - Do Not Repsepct Width, Height
+  - Respect Padding And Margin [ Just Wight + Left ]
+  - Do Not Add Line Break
+  - Allow Elements Before And After It in The Same Line
+
+  Inline-Block
+
+  - Allow Elements Before And After It in The Same Line
+  - Respect Padding, Margin, Width, Height
+
+*/
+/* 
+span {
+    background-color: #EEE;
+    display: inline-block;
+  } */
+
+/* 
+display 
+  none
+  -hide object from screen and remove it's place
+visability
+   (visible- hidden)
+  -hide object from screen but don't remove it's place  */
+
+  /* Grouping Multiple Selectors -> ,
+.one, .two, .three,.four,.my-p {
+  padding: 15px;
+  margin: 12px 0;
+  background-color: #ededed;
+} */
+
+/* 
+nesting -> element p inside div 
+ div p {
+    color: red;
+ } 
+ -> class special inside div
+ div .special {
+    color: red;
+ } */
+
+ /* dimention width height */
+ 

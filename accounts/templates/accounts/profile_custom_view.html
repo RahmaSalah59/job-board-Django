@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Welcom {{profile.user}} ^^</h3>
+                        <h3>Publisher Info </h3>
                     </div>
                 </div>
             </div>
@@ -35,18 +35,13 @@
                                             <ul>
                                             
                                                <li><img src="{{profile.image.url}}" height="200px" width="200px" ></li>
-                                                <li>Name: <span><strong>{{profile.user}}</strong></span></li>
+                                                <li>Name: <span><strong>{{profile.user.first_name}} {{profile.user.last_name}}</strong></span></li>
                                                 <li>Email: <span><strong>{{profile.user.email}}</strong></span></li>
                                                 <li>City: <span><strong>{{profile.city}}</strong></span></li>
                                                 <li>Phone Number: <span><strong>{{profile.phone_number}}</strong></span></li>
-                                                <li><span><strong>
-                                                    <a href="{% url 'accounts:profile_jobs' %}" class = "boxed-btn4 w-5">Posted jobs</a></strong></span></li>
+                                               
                                             </ul>
                                         </div>
-                                          <div>
-                                             <a href="{% url 'accounts:profile_edit' %}" class="boxed-btn3 w-100">Edit Profile</a>
-                                         </div>
-                                  
                                    
                                 </div>
                                 

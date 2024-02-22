@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'job.apps.JobConfig',
     'bootstrap4',
     'django_filters',
+    'rest_framework',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

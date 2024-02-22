@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from .models import job
+from accounts.models import profile
 from django.core.paginator import Paginator
 from .form import ApplyForm ,AddJob
 from django.contrib.auth.decorators import login_required 
@@ -16,7 +17,7 @@ def all_jobs(request):
     all_jobs = job.objects.all().order_by('puplished_at')
     filter = JobFilter(request.GET,queryset=all_jobs)
     all_jobs = filter.qs
-    num = job.objects.all()
+    num = job.objects.all().order_by("-puplished_at")[:3]
     data_per_page = Paginator(all_jobs,3)#this line will appear only on job in each page
     page_num = request.GET.get("page")
     page_obj = data_per_page.get_page(page_num)
@@ -46,6 +47,7 @@ def add_job(request):
         if form.is_valid():
             myform = form.save(commit=False)
             myform.owner = request.user
+            myform.profile_name = profile.objects.get(request.user)
             myform.save()
             return redirect(reverse("job:all_jobs"))
     else:

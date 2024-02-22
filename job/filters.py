@@ -8,4 +8,4 @@ class JobFilter(django_filters.FilterSet):
     description = django_filters.CharFilter(lookup_expr='icontains')
     class Meta:
         model = job
-        exclude = ('owner','puplished_at','vacancy','salary','image','slug')
+        exclude = ('owner','puplished_at','vacancy','salary','image','slug','profile_name')

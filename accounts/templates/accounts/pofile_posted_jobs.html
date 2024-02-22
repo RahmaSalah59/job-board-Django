@@ -28,26 +28,21 @@
                                 
                                     <div class="job_sumary ">
                                         <div class="summery_header ">
-                                            <h2 class="text-center">{{profile.user.first_name}} {{profile.user.last_name}}</h2>
+                                            <h2 class="text-center">{{profile.user}} Posted jobs</h2>
                                         </div>
                                         <div class="job_content">
                                            
                                             <ul>
-                                            
-                                               <li><img src="{{profile.image.url}}" height="200px" width="200px" ></li>
-                                                <li>Name: <span><strong>{{profile.user}}</strong></span></li>
-                                                <li>Email: <span><strong>{{profile.user.email}}</strong></span></li>
-                                                <li>City: <span><strong>{{profile.city}}</strong></span></li>
-                                                <li>Phone Number: <span><strong>{{profile.phone_number}}</strong></span></li>
-                                                <li><span><strong>
-                                                    <a href="{% url 'accounts:profile_jobs' %}" class = "boxed-btn4 w-5">Posted jobs</a></strong></span></li>
+                                            {% for item in posted %}
+                                                <li><span><strong><a href= "{% url 'job:job_details' item.slug %}"> {{item.title}} <img src="{{item.image.url}}" alt="" height="80px" width="80px" >
+                                                </strong></span></li>
+                                                <br> <br>
+                                             <a href="{% url 'accounts:job_applicants' item.pk %}" class="boxed-btn3 w-100">Applications</a> <br> <br>
+
+                                            {% endfor %}
                                             </ul>
                                         </div>
-                                          <div>
-                                             <a href="{% url 'accounts:profile_edit' %}" class="boxed-btn3 w-100">Edit Profile</a>
-                                         </div>
-                                  
-                                   
+                        
                                 </div>
                                 
                             </div>
