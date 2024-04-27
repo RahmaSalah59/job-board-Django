@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 class profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE, related_name = "profile" )
+    user = models.OneToOneField(User,on_delete=models.CASCADE )
     city = models.ForeignKey('city',on_delete=models.CASCADE,null=True,blank=True)
     image = models.ImageField(upload_to='profile/',null=True,blank=True,default='avatar.jpg')
     phone_number = models.PositiveIntegerField(null=True)
